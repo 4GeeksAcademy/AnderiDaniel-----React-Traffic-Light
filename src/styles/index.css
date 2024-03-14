@@ -1,12 +1,38 @@
+.box {
+    justify-content: center;
+}
 
-/* 
+.lightBox {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    width: 55px;
+    height: 200px; /* Ajusta la altura según sea necesario */
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.traffic-light-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    margin: 5px;
+    cursor: pointer;
+}
 
-*/
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.active {
+    box-shadow: 0 0 10px white;
+}
+
