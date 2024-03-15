@@ -1,23 +1,33 @@
+body {
+    background-image: url("https://t3.ftcdn.net/jpg/00/98/26/24/360_F_98262429_sUQILdgC0z5i42izLzjTsIG4HEjbosRX.jpg");
+}
+
 .box {
+    display: flex;
     justify-content: center;
 }
 
+
 .lightBox {
+    margin-top: 20px;
     background-color: black;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centrado horizontal */
-    align-items: center; /* Centrado vertical */
-    width: 55px;
-    height: 200px; /* Ajusta la altura según sea necesario */
+    justify-content: center; 
+    align-items: center; 
+    width: 100px;
+    height: 200px; 
+    border-radius: 20px;
 }
 
 .traffic-light-button {
     padding: 10px 20px;
     border: none;
-    border-radius: 20px;
+    border-radius: 30px;
     margin: 5px;
     cursor: pointer;
+    height: 3rem;
+    width: 3rem;
 }
 
 .red {
@@ -25,14 +35,14 @@
 }
 
 .yellow {
-    background-color: yellow;
+    background-color: rgb(253, 253, 84);
 }
 
 .green {
-    background-color: green;
+    background-color: rgb(53, 161, 53);
 }
 
 .active {
-    box-shadow: 0 0 10px white;
+    box-shadow: 0 0 20px white;
 }
 
