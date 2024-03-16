@@ -2,11 +2,21 @@ body {
     background-image: url("https://t3.ftcdn.net/jpg/00/98/26/24/360_F_98262429_sUQILdgC0z5i42izLzjTsIG4HEjbosRX.jpg");
 }
 
+.extraButton button{
+    margin: 10px;
+}
+
+.extraButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 15px;
+}
+
 .box {
     display: flex;
     justify-content: center;
 }
-
 
 .lightBox {
     margin-top: 20px;
