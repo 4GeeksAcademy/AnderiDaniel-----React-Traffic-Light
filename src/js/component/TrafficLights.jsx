@@ -4,36 +4,41 @@ import "../../styles/index.css";
 function TrafficLights() {
     const [activeColor, setActiveColor] = useState("red");
     const [isCycleActive, setIsCycleActive] = useState(false);
+    const [isGreenPurple, setIsGreenPurple] = useState(false);
 
     const clickRed = () => {
         setActiveColor("red");
-        setIsCycleActive(false); // Detenemos el ciclo cuando se presiona el botón manualmente
+        setIsCycleActive(false); 
     };
 
     const clickYellow = () => {
         setActiveColor("yellow");
-        setIsCycleActive(false); // Detenemos el ciclo cuando se presiona el botón manualmente
+        setIsCycleActive(false); 
     };
 
     const clickGreen = () => {
         setActiveColor("green");
-        setIsCycleActive(false); // Detenemos el ciclo cuando se presiona el botón manualmente
+        setIsCycleActive(false); 
     };
 
     const startCycle = () => {
         if (isCycleActive) {
-            setIsCycleActive(false); // Si el ciclo ya está activo, lo detenemos
+            setIsCycleActive(false); 
         } else {
-            setIsCycleActive(true); // Si el ciclo no está activo, lo iniciamos
+            setIsCycleActive(true); 
         }
+    };
+
+    const changeLight = () => {
+        setIsGreenPurple(prevState => !prevState); 
     };
 
     useEffect(() => {
         let intervalId
 
         if (isCycleActive) {
-         let intervalId = setInterval(() => {
-                // Cambiamos el color del semáforo en un ciclo
+         intervalId = setInterval(() => {
+
                 switch (activeColor) {
                     case "red":
                         setActiveColor("yellow");
@@ -47,12 +52,12 @@ function TrafficLights() {
                     default:
                         break;
                 }
-            }, 1000); // Cambia de color cada segundo
+            }, 1000); 
         } else {
-            clearInterval(intervalId); // Detenemos el ciclo si isCycleActive es falso
+            clearInterval(intervalId); 
         }
 
-        return () => clearInterval(intervalId); // Limpiamos el temporizador al desmontar el componente
+        return () => clearInterval(intervalId); 
     }, [isCycleActive, activeColor]);
 
     return (
@@ -67,8 +72,8 @@ function TrafficLights() {
                 <button
                     type="button"
                     className="btn btn-primary mt-2"
-                    onClick={clickRed}>
-                    Red
+                    onClick={changeLight}>
+                    Change Light
                 </button>
             </div>
             <div className="lightBox">
@@ -81,7 +86,7 @@ function TrafficLights() {
                     onClick={clickYellow}>
                 </button>
                 <button
-                    className={"traffic-light-button green " + (activeColor === "green" ? "active" : "")}
+                    className={"traffic-light-button " + (isGreenPurple ? "purple" : "green") + (activeColor === "green" ? " active" : "")}
                     onClick={clickGreen}>
                 </button>
             </div>
